@@ -53,6 +53,7 @@
         handString += concatData("confidence", hand.confidence);
         handString += concatData("pinch_strength", hand.pinchStrength);
         handString += concatData("grab_strength", hand.grabStrength);
+        handString += concatData("hand_direction", hand.direction);
         grabTest(hand.grabStrength);
 
         handString += '<br>';
@@ -77,16 +78,14 @@
     });
 
     var info
-
     function grabTest(grabStrength) {
       if (grabStrength > .8) {
-        info = "Strong Grab";
         console.info("grabed");
       }
       else {
-        info = "No grab";
-          console.info("no");
+        console.info("no");
       }
-
-
     }
+
+    var direction = hand.direction;
+    console.table(direction);
